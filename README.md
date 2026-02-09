@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0b1220,100:7c3aed&height=220&section=header&text=ai-solutions&fontSize=64&fontColor=ffffff&desc=Competition%20solutions%20and%20general%20AI%2FML%20notebooks&descAlignY=72" />
+  <img src="./assets/lava-header.svg" />
 </p>
 
 <h1 align="center">ai-solutions</h1>
