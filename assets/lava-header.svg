@@ -1,55 +1,107 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="220" viewBox="0 0 1200 220">
   <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#0b1220">
-        <animate attributeName="stop-color"
-                 values="#0b1220;#7c3aed;#ef4444;#f59e0b;#0b1220"
-                 dur="10s" repeatCount="indefinite" />
-      </stop>
-      <stop offset="50%" stop-color="#7c3aed">
-        <animate attributeName="stop-color"
-                 values="#7c3aed;#10b981;#0ea5e9;#7c3aed"
-                 dur="10s" repeatCount="indefinite" />
-      </stop>
-      <stop offset="100%" stop-color="#10b981">
-        <animate attributeName="stop-color"
-                 values="#10b981;#0ea5e9;#7c3aed;#10b981"
-                 dur="10s" repeatCount="indefinite" />
-      </stop>
-
-      <!-- Also slide the gradient back and forth -->
-      <animate attributeName="x1" values="0%;100%;0%" dur="12s" repeatCount="indefinite" />
-      <animate attributeName="x2" values="100%;0%;100%" dur="12s" repeatCount="indefinite" />
+    <!-- Dark base background -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#14102a"/>
+      <!-- gentle drift only -->
+      <animate attributeName="x1" values="0%;10%;0%" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="100%;90%;100%" dur="18s" repeatCount="indefinite"/>
     </linearGradient>
 
-    <!-- soft blur for “goo” feel -->
-    <filter id="blur">
-      <feGaussianBlur stdDeviation="18"/>
+    <!-- Goo-ish filter: blur + a bit of contrast -->
+    <filter id="goo" x="-20%" y="-60%" width="140%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="18" result="blur"/>
+      <!-- boost contrast: (rough threshold feel) -->
+      <feComponentTransfer in="blur" result="goo">
+        <feFuncA type="gamma" amplitude="1" exponent="1.8" offset="0"/>
+      </feComponentTransfer>
     </filter>
+
+    <!-- Blob gradients (colors animate INSIDE each blob, not by dragging the whole gradient) -->
+    <radialGradient id="blobA" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#ff3d7f">
+        <animate attributeName="stop-color"
+                 values="#ff3d7f;#f59e0b;#7c3aed;#ff3d7f"
+                 dur="10s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0">
+        <animate attributeName="stop-color"
+                 values="#7c3aed;#10b981;#0ea5e9;#7c3aed"
+                 dur="10s" repeatCount="indefinite"/>
+      </stop>
+    </radialGradient>
+
+    <radialGradient id="blobB" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#10b981">
+        <animate attributeName="stop-color"
+                 values="#10b981;#0ea5e9;#ef4444;#10b981"
+                 dur="12s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0">
+        <animate attributeName="stop-color"
+                 values="#0ea5e9;#7c3aed;#f59e0b;#0ea5e9"
+                 dur="12s" repeatCount="indefinite"/>
+      </stop>
+    </radialGradient>
+
+    <radialGradient id="blobC" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#7c3aed">
+        <animate attributeName="stop-color"
+                 values="#7c3aed;#ef4444;#10b981;#7c3aed"
+                 dur="14s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0">
+        <animate attributeName="stop-color"
+                 values="#ef4444;#0ea5e9;#f59e0b;#ef4444"
+                 dur="14s" repeatCount="indefinite"/>
+      </stop>
+    </radialGradient>
+
+    <!-- Soft vignette so edges feel grounded -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.35"/>
+    </radialGradient>
   </defs>
 
-  <!-- background -->
-  <rect width="1200" height="220" fill="url(#g)"/>
+  <!-- Background -->
+  <rect width="1200" height="220" fill="url(#bg)"/>
 
-  <!-- floating blurry blobs to sell the lava-lamp vibe -->
-  <g filter="url(#blur)" opacity="0.35">
-    <circle r="80" cx="200" cy="120" fill="#ffffff">
-      <animate attributeName="cx" values="150;450;150" dur="14s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="160;60;160" dur="9s" repeatCount="indefinite"/>
+  <!-- Lava blobs (move blobs, not the whole gradient) -->
+  <g filter="url(#goo)" opacity="0.85">
+    <circle r="95" cx="200" cy="160" fill="url(#blobA)">
+      <animate attributeName="cx" values="140;420;240;140" dur="17s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="170;70;130;170" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="r"  values="85;110;90;85" dur="9s"  repeatCount="indefinite"/>
     </circle>
-    <circle r="100" cx="650" cy="140" fill="#ffffff">
-      <animate attributeName="cx" values="700;520;700" dur="16s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="70;170;70" dur="11s" repeatCount="indefinite"/>
+
+    <circle r="120" cx="560" cy="90" fill="url(#blobB)">
+      <animate attributeName="cx" values="520;740;600;520" dur="19s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="80;160;110;80" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="r"  values="110;135;120;110" dur="11s" repeatCount="indefinite"/>
     </circle>
-    <circle r="70" cx="980" cy="90" fill="#ffffff">
-      <animate attributeName="cx" values="980;780;980" dur="13s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="150;50;150" dur="10s" repeatCount="indefinite"/>
+
+    <circle r="90" cx="980" cy="140" fill="url(#blobC)">
+      <animate attributeName="cx" values="1020;820;940;1020" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="150;60;120;150" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="r"  values="80;105;90;80" dur="10s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- A small “bubble” blob adds life -->
+    <circle r="55" cx="820" cy="170" fill="url(#blobA)" opacity="0.9">
+      <animate attributeName="cx" values="860;700;820;860" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="175;120;165;175" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="r"  values="45;65;55;45" dur="8s"  repeatCount="indefinite"/>
     </circle>
   </g>
 
-  <!-- title text -->
+  <!-- Vignette overlay -->
+  <rect width="1200" height="220" fill="url(#vignette)"/>
+
+  <!-- Text -->
   <text x="50%" y="48%" text-anchor="middle"
-        font-family="Segoe UI, Roboto, Arial" font-size="64" font-weight="700"
+        font-family="Segoe UI, Roboto, Arial" font-size="64" font-weight="800"
         fill="#ffffff">ai-solutions</text>
 
   <text x="50%" y="72%" text-anchor="middle"
