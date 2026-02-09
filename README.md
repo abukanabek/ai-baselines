@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/lava-header.svg" />
+  <img src="./assets/nn-header.svg" />
 </p>
 
 <h1 align="center">ai-solutions</h1>
