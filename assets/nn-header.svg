@@ -1,0 +1,339 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="220" viewBox="0 0 1200 220">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#14102a"/>
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-60%" width="140%" height="220%">
+      <feGaussianBlur stdDeviation="2.6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="goo" x="-20%" y="-80%" width="140%" height="260%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feComponentTransfer in="blur" result="goo">
+        <feFuncA type="gamma" amplitude="1" exponent="1.3" offset="0"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="goo"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <radialGradient id="nodeA" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#7c3aed">
+        <animate attributeName="stop-color"
+                 values="#7c3aed;#0ea5e9;#10b981;#f59e0b;#7c3aed"
+                 dur="16s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#0b1220" stop-opacity="0.08"/>
+    </radialGradient>
+
+    <radialGradient id="nodeB" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ef4444">
+        <animate attributeName="stop-color"
+                 values="#ef4444;#f59e0b;#7c3aed;#0ea5e9;#ef4444"
+                 dur="18s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#0b1220" stop-opacity="0.08"/>
+    </radialGradient>
+
+    <radialGradient id="nodeC" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#10b981">
+        <animate attributeName="stop-color"
+                 values="#10b981;#0ea5e9;#7c3aed;#ef4444;#10b981"
+                 dur="20s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#0b1220" stop-opacity="0.08"/>
+    </radialGradient>
+
+    <linearGradient id="edge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.55"/>
+      <stop offset="50%" stop-color="#0ea5e9" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.55"/>
+      <animate attributeName="x1" values="0%;15%;0%" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="100%;85%;100%" dur="12s" repeatCount="indefinite"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="220" fill="url(#bg)"/>
+
+  <!-- Even-ish layer x positions: 200, 500, 800, 1100 -->
+  <!-- Even-ish y positions:
+       for 2: 70,150
+       for 4: 45,85,125,165
+  -->
+
+  <!-- EDGES -->
+  <g filter="url(#glow)" stroke="url(#edge)" stroke-width="2" stroke-linecap="round" opacity="0.75">
+
+    <!-- L1 (2) -> L2 (4) -->
+    <!-- L1a (200,70) -->
+    <line>
+      <animate attributeName="x1" values="200;188;212;200" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="70;80;64;70" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="500;512;488;500" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="45;55;40;45" dur="12s" repeatCount="indefinite"/>
+    </line>
+    <line>
+      <animate attributeName="x1" values="200;188;212;200" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="70;80;64;70" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="500;490;515;500" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="85;75;92;85" dur="13s" repeatCount="indefinite"/>
+    </line>
+    <line>
+      <animate attributeName="x1" values="200;188;212;200" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="70;80;64;70" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="500;505;485;500" dur="17s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="125;118;132;125" dur="14s" repeatCount="indefinite"/>
+    </line>
+    <line>
+      <animate attributeName="x1" values="200;188;212;200" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="70;80;64;70" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="500;492;510;500" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="165;155;172;165" dur="15s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- L1b (200,150) -->
+    <line>
+      <animate attributeName="x1" values="200;214;190;200" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="150;140;158;150" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="500;512;488;500" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="45;55;40;45" dur="12s" repeatCount="indefinite"/>
+    </line>
+    <line>
+      <animate attributeName="x1" values="200;214;190;200" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="150;140;158;150" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="500;490;515;500" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="85;75;92;85" dur="13s" repeatCount="indefinite"/>
+    </line>
+    <line>
+      <animate attributeName="x1" values="200;214;190;200" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="150;140;158;150" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="500;505;485;500" dur="17s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="125;118;132;125" dur="14s" repeatCount="indefinite"/>
+    </line>
+    <line>
+      <animate attributeName="x1" values="200;214;190;200" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="150;140;158;150" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="500;492;510;500" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="165;155;172;165" dur="15s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- L2 (4) -> L3 (4): connect each to each (16 lines) -->
+    <!-- To keep file size sane, we’ll do a “mostly dense” look: each L2 connects to 3 L3 nodes -->
+
+    <!-- L2y45 -> L3y45,85,125 -->
+    <line>
+      <animate attributeName="x1" values="500;512;488;500" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="45;55;40;45" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="800;812;790;800" dur="17s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="45;52;40;45" dur="13s" repeatCount="indefinite"/>
+    </line>
+    <line>
+      <animate attributeName="x1" values="500;512;488;500" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="45;55;40;45" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="800;790;815;800" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="85;77;92;85" dur="14s" repeatCount="indefinite"/>
+    </line>
+    <line>
+      <animate attributeName="x1" values="500;512;488;500" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="45;55;40;45" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="800;805;788;800" dur="19s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="125;118;132;125" dur="15s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- L2y85 -> L3y45,85,165 -->
+    <line>
+      <animate attributeName="x1" values="500;490;515;500" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="85;75;92;85" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="800;812;790;800" dur="17s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="45;52;40;45" dur="13s" repeatCount="indefinite"/>
+    </line>
+    <line>
+      <animate attributeName="x1" values="500;490;515;500" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="85;75;92;85" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="800;790;815;800" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="85;77;92;85" dur="14s" repeatCount="indefinite"/>
+    </line>
+    <line>
+      <animate attributeName="x1" values="500;490;515;500" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="85;75;92;85" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="800;798;812;800" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="165;155;172;165" dur="16s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- L2y125 -> L3y45,125,165 -->
+    <line>
+      <animate attributeName="x1" values="500;505;485;500" dur="17s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="125;118;132;125" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="800;812;790;800" dur="17s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="45;52;40;45" dur="13s" repeatCount="indefinite"/>
+    </line>
+    <line>
+      <animate attributeName="x1" values="500;505;485;500" dur="17s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="125;118;132;125" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="800;805;788;800" dur="19s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="125;118;132;125" dur="15s" repeatCount="indefinite"/>
+    </line>
+    <line>
+      <animate attributeName="x1" values="500;505;485;500" dur="17s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="125;118;132;125" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="800;798;812;800" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="165;155;172;165" dur="16s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- L2y165 -> L3y85,125,165 -->
+    <line>
+      <animate attributeName="x1" values="500;492;510;500" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="165;155;172;165" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="800;790;815;800" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="85;77;92;85" dur="14s" repeatCount="indefinite"/>
+    </line>
+    <line>
+      <animate attributeName="x1" values="500;492;510;500" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="165;155;172;165" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="800;805;788;800" dur="19s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="125;118;132;125" dur="15s" repeatCount="indefinite"/>
+    </line>
+    <line>
+      <animate attributeName="x1" values="500;492;510;500" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="165;155;172;165" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="800;798;812;800" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="165;155;172;165" dur="16s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- L3 (4) -> L4 (2): connect each to both -->
+    <!-- L4: (1100,70) and (1100,150) -->
+    <!-- L3y45 -->
+    <line>
+      <animate attributeName="x1" values="800;812;790;800" dur="17s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="45;52;40;45" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1100;1112;1088;1100" dur="21s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="70;80;64;70" dur="16s" repeatCount="indefinite"/>
+    </line>
+    <line>
+      <animate attributeName="x1" values="800;812;790;800" dur="17s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="45;52;40;45" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1100;1088;1112;1100" dur="22s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="150;140;158;150" dur="17s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- L3y85 -->
+    <line>
+      <animate attributeName="x1" values="800;790;815;800" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="85;77;92;85" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1100;1112;1088;1100" dur="21s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="70;80;64;70" dur="16s" repeatCount="indefinite"/>
+    </line>
+    <line>
+      <animate attributeName="x1" values="800;790;815;800" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="85;77;92;85" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1100;1088;1112;1100" dur="22s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="150;140;158;150" dur="17s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- L3y125 -->
+    <line>
+      <animate attributeName="x1" values="800;805;788;800" dur="19s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="125;118;132;125" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1100;1112;1088;1100" dur="21s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="70;80;64;70" dur="16s" repeatCount="indefinite"/>
+    </line>
+    <line>
+      <animate attributeName="x1" values="800;805;788;800" dur="19s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="125;118;132;125" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1100;1088;1112;1100" dur="22s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="150;140;158;150" dur="17s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- L3y165 -->
+    <line>
+      <animate attributeName="x1" values="800;798;812;800" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="165;155;172;165" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1100;1112;1088;1100" dur="21s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="70;80;64;70" dur="16s" repeatCount="indefinite"/>
+    </line>
+    <line>
+      <animate attributeName="x1" values="800;798;812;800" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="165;155;172;165" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1100;1088;1112;1100" dur="22s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="150;140;158;150" dur="17s" repeatCount="indefinite"/>
+    </line>
+
+  </g>
+
+  <!-- NODES -->
+  <g filter="url(#goo)" opacity="0.95">
+    <!-- Layer 1: 2 nodes -->
+    <circle r="18" fill="url(#nodeA)">
+      <animate attributeName="cx" values="200;188;212;200" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="70;80;64;70" dur="11s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="18" fill="url(#nodeB)">
+      <animate attributeName="cx" values="200;214;190;200" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="150;140;158;150" dur="10s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Layer 2: 4 nodes -->
+    <circle r="16" fill="url(#nodeC)">
+      <animate attributeName="cx" values="500;512;488;500" dur="15s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="45;55;40;45" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="18" fill="url(#nodeA)">
+      <animate attributeName="cx" values="500;490;515;500" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="85;75;92;85" dur="13s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="18" fill="url(#nodeB)">
+      <animate attributeName="cx" values="500;505;485;500" dur="17s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="125;118;132;125" dur="14s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="16" fill="url(#nodeC)">
+      <animate attributeName="cx" values="500;492;510;500" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="165;155;172;165" dur="15s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Layer 3: 4 nodes -->
+    <circle r="18" fill="url(#nodeA)">
+      <animate attributeName="cx" values="800;812;790;800" dur="17s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="45;52;40;45" dur="13s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="16" fill="url(#nodeB)">
+      <animate attributeName="cx" values="800;790;815;800" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="85;77;92;85" dur="14s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="18" fill="url(#nodeC)">
+      <animate attributeName="cx" values="800;805;788;800" dur="19s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="125;118;132;125" dur="15s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="16" fill="url(#nodeA)">
+      <animate attributeName="cx" values="800;798;812;800" dur="20s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="165;155;172;165" dur="16s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Layer 4: 2 nodes -->
+    <circle r="20" fill="url(#nodeC)">
+      <animate attributeName="cx" values="1100;1112;1088;1100" dur="21s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="70;80;64;70" dur="16s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="20" fill="url(#nodeB)">
+      <animate attributeName="cx" values="1100;1088;1112;1100" dur="22s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="150;140;158;150" dur="17s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Text -->
+  <text x="50%" y="48%" text-anchor="middle"
+        font-family="Segoe UI, Roboto, Arial" font-size="64" font-weight="800"
+        fill="#ffffff">ai-solutions</text>
+
+  <text x="50%" y="72%" text-anchor="middle"
+        font-family="Segoe UI, Roboto, Arial" font-size="20"
+        fill="#ffffff" opacity="0.9">
+    Competition solutions and general AI/ML notebooks
+  </text>
+</svg>
