@@ -16,27 +16,39 @@
   </a>
 </p>
 
-<p align="center">
-  <!-- Competition folder buttons (top-level only) -->
+<p>
   <a href="./competitions/aicc/">
-    <img src="https://img.shields.io/badge/AICC-6366f1?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/AICC--6366F1?style=for-the-badge&labelColor=6366F1" />
   </a>
+
+  <a href="./competitions/benin-ai-olympiad/">
+    <img src="https://img.shields.io/badge/BENIN%20AI%20OLYMPIAD--0EA5E9?style=for-the-badge&labelColor=0EA5E9" />
+  </a>
+
   <a href="./competitions/colombian-ai-olympiad/">
-    <img src="https://img.shields.io/badge/COLOMBIAN%20AI%20OLYMPIAD-0ea5e9?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/COLOMBIAN%20AI%20OLYMPIAD--10B981?style=for-the-badge&labelColor=10B981" />
   </a>
+
   <a href="./competitions/cyprus-ai-camp/">
-    <img src="https://img.shields.io/badge/CYPRUS%20AI%20CAMP-8b5cf6?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/CYPRUS%20AI%20CAMP--F59E0B?style=for-the-badge&labelColor=F59E0B" />
   </a>
+
   <a href="./competitions/japanese-ai-olympiad/">
-    <img src="https://img.shields.io/badge/JAPANESE%20AI%20OLYMPIAD-10b981?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/JAPANESE%20AI%20OLYMPIAD--6366F1?style=for-the-badge&labelColor=6366F1" />
   </a>
+
   <a href="./competitions/mlcompete/">
-    <img src="https://img.shields.io/badge/MLCOMPETE-f59e0b?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/MLCOMPETE--0EA5E9?style=for-the-badge&labelColor=0EA5E9" />
   </a>
+
   <a href="./competitions/russian-ai-olympiad/">
-    <img src="https://img.shields.io/badge/RUSSIAN%20AI%20OLYMPIAD-ef4444?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/RUSSIAN%20AI%20OLYMPIAD--10B981?style=for-the-badge&labelColor=10B981" />
   </a>
 </p>
+
+
+
+
 
 ---
 
